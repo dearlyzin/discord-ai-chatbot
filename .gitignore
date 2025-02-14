@@ -1,0 +1,6 @@
+# Ignorar arquivos sensíveis
+.env
+# Ignorar pastas do Python
+__pycache__/
+*.pyc
+*.pyo
