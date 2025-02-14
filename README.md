@@ -1,16 +1,10 @@
 # 🤖 **Discord AI Chatbot**  
 
-<p align="center">
-  <img src="https://img.shields.io/github/stars/dearlyzin/discord-ai-chatbot?style=for-the-badge" alt="GitHub stars">
-  <img src="https://img.shields.io/github/forks/dearlyzin/discord-ai-chatbot?style=for-the-badge" alt="GitHub forks">
-  <img src="https://img.shields.io/github/issues/dearlyzin/discord-ai-chatbot?style=for-the-badge" alt="GitHub issues">
-</p>
-
 ## 📌 **Description**  
 An intelligent chatbot for Discord that utilizes the **Groq API** for faster responses.  
 
 🔹 **Key Features:**  
-✅ Change the AI model according to [Groq's available models](https://console.groq.com/docs/available-models).  
+✅ Change the AI model according to [Groq's available models](https://console.groq.com/docs/models).  
 ✅ Maintain conversation memory for multiple users simultaneously.  
 ✅ Use it for free with a generous daily usage limit.  
 ✅ Expand functionality by easily adding more commands.  
@@ -62,8 +56,16 @@ python bot.py
 
 ✔️ **Ask Questions** → Use `!ask` [your question] to interact with the AI.
 
-✔️ **Clear Memory** → Use `!limpar` to reset the conversation memory.
+✔️ **Clear Memory** → Use `!clear` to reset the conversation memory.
 
+---
 
+🛠 **Technologies Used**
+
+🐍 **Python**
+
+🤖 **Discord API**
+
+⚡ **Groq API**
 
   
