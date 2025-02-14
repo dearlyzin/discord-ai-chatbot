@@ -49,8 +49,13 @@ class Clear(commands.Cog):
         self.conversation_memory = conversation_memory
 
     @commands.command(name='clear')
+<<<<<<< HEAD
     async def clear(self, ctx):
         """Clears the user's conversation memory."""
+=======
+    async def limpar(self, ctx):
+        """Limpa a memória da conversa do usuário."""
+>>>>>>> e4d384c6f524e6d5e42944c69796e5ac7981c203
         user_id = ctx.author.id
 
         if user_id in self.conversation_memory:
@@ -60,7 +65,14 @@ class Clear(commands.Cog):
             await ctx.send("❌ No memory to clear.")
 
 async def setup(bot):
+<<<<<<< HEAD
     """Setup function to add commands to the bot."""
     conversation_memory = {}
     await bot.add_cog(Help(bot))
     await bot.add_cog(Clear(bot, conversation_memory))
+=======
+    """Função de setup para adicionar os comandos ao bot."""
+    memoria_conversas = {} 
+    await bot.add_cog(Ajuda(bot))
+    await bot.add_cog(Limpar(bot, memoria_conversas))
+>>>>>>> e4d384c6f524e6d5e42944c69796e5ac7981c203
