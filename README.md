@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Discord AI Chatbot
 
 🤖 Description
@@ -47,3 +48,7 @@ discord-ai-chatbot/
 Invite the Bot: Use the OAuth2 URL to add the bot to your server.
 Ask Questions: Use !ask [your question] to interact with the AI.
 Clear Memory: Use !clear to reset the conversation memory.
+=======
+# discord-ai-chatbot
+Simple discord chatbot with AI using Groq API and models
+>>>>>>> a3ed66e478aa19cff80b4d206e4e343f86ed059b
