@@ -48,7 +48,7 @@ class Limpar(commands.Cog):
         self.bot = bot
         self.memoria_conversas = memoria_conversas
 
-    @commands.command(name='limpar')
+    @commands.command(name='clear')
     async def limpar(self, ctx):
         """Limpa a memória da conversa do usuário."""
         user_id = ctx.author.id
