@@ -1,66 +1,66 @@
 from discord import Embed, Color
 from discord.ext import commands
 
-class Ajuda(commands.Cog):
+class Help(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='ajuda')
-    async def ajuda(self, ctx):
-        """Mostra a lista de comandos disponíveis."""
+    @commands.command(name='help')
+    async def help(self, ctx):
+        """Displays the list of available commands."""
         embed = Embed(
-            title="📚 Guia de Comandos",
-            description="Aqui está o que posso fazer!",
+            title="📚 Command Guide",
+            description="Here is what I can do!",
             color=Color.blue()
         )
 
         embed.add_field(
-            name="🤖 Comandos",
+            name="🤖 Commands",
             value="""
-            **!ask [sua pergunta]** - Faça uma pergunta para a IA.
-            **!limpar** - Limpa a memória da IA.
-            **!ajuda** - Exibe todos os comandos do bot.
+            **!ask [your question]** - Ask the AI a question.
+            **!clear** - Clears the AI's memory.
+            **!help** - Displays all bot commands.
             """,
             inline=False
         )
 
         embed.add_field(
-            name="💡 Exemplos:",
+            name="💡 Examples:",
             value="""
-            **!ask Quem é você**
+            **!ask Who are you**
             """,
             inline=False
         )
 
         embed.add_field(
-            name="⚠️ Observações:",
+            name="⚠️ Notes:",
             value="""
-            - Aguarde 5 segundos entre perguntas.
+            - Wait 5 seconds between questions.
             """,
             inline=False
         )
 
-        embed.set_footer(text="Feito com Groq✅") ## Coloque sua mensagem aqui
+        embed.set_footer(text="Made with Groq ✅")  # Add your custom footer message here
         await ctx.send(embed=embed)
 
-class Limpar(commands.Cog):
-    def __init__(self, bot, memoria_conversas):
+class Clear(commands.Cog):
+    def __init__(self, bot, conversation_memory):
         self.bot = bot
-        self.memoria_conversas = memoria_conversas
+        self.conversation_memory = conversation_memory
 
-    @commands.command(name='limpar')
-    async def limpar(self, ctx):
-        """Limpa a memória da conversa do usuário."""
+    @commands.command(name='clear')
+    async def clear(self, ctx):
+        """Clears the user's conversation memory."""
         user_id = ctx.author.id
 
-        if user_id in self.memoria_conversas:
-            del self.memoria_conversas[user_id]
-            await ctx.send("🧹 Memória da conversa foi limpa!")
+        if user_id in self.conversation_memory:
+            del self.conversation_memory[user_id]
+            await ctx.send("🧹 Conversation memory has been cleared!")
         else:
-            await ctx.send("❌ Não há memória para limpar.")
+            await ctx.send("❌ No memory to clear.")
 
 async def setup(bot):
-    """Função de setup para adicionar os comandos ao bot."""
-    memoria_conversas = {} 
-    await bot.add_cog(Ajuda(bot))
-    await bot.add_cog(Limpar(bot, memoria_conversas))
+    """Setup function to add commands to the bot."""
+    conversation_memory = {}
+    await bot.add_cog(Help(bot))
+    await bot.add_cog(Clear(bot, conversation_memory))
