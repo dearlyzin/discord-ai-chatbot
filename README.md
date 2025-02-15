@@ -14,7 +14,7 @@ An intelligent chatbot for Discord that utilizes the **Groq API** for faster res
 ## ⚙️ **Main Commands**  
 ````yaml
 !ask [your question] → Ask the AI a question.
-!help → Displays help information.
+!h → Displays help information.
 !clear → Clears conversation memory.
 ````
 
