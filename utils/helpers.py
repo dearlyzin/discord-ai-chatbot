@@ -1,6 +1,9 @@
-from discord import Embed, Color, utils
+from discord import Embed, Color
+from datetime import datetime, timezone
+import re
 
-def split_message(message, limit=1024):
+def split_message(message, limit=1000):
+    """Divide mensagens longas em partes menores"""
     parts = []
     while len(message) > limit:
         cut = message.rfind(' ', 0, limit)
@@ -11,20 +14,35 @@ def split_message(message, limit=1024):
     parts.append(message)
     return parts
 
-# Function to create a custom embed
-def create_response_embed(question, answer):
+def clean_citations(text):
+    """Remove citações do texto"""
+    return re.sub(r'\[\d+\]', '', text).strip()
+
+def create_response_embed(query, answer):
+    """Cria uma embed para respostas (função principal usada pelo comando !ask)"""
     embed = Embed(
-        title="🤖 Response",
-        description="**Found the answer!**",
+        title="🔎 Resultado",
+        description="**Achei algo para você:**",
         color=Color.blue()
     )
-    embed.add_field(name="📝 Question", value=question, inline=False)
 
-    # Split the answer into smaller parts and format each part in bold
-    answer_parts = split_message(answer, limit=1024)
-    for i, part in enumerate(answer_parts):
-        embed.add_field(name=f"💬 Answer (Part {i + 1})", value=f"**{part}**", inline=False)
+    # Formata a pergunta
+    query_parts = split_message(query)
+    for i, part in enumerate(query_parts, 1):
+        field_name = f"📝 Pergunta (Parte {i})" if len(query_parts) > 1 else "📝 Pergunta"
+        embed.add_field(name=field_name, value=part, inline=False)
 
-    # Add timestamp
-    embed.timestamp = utils.utcnow()
+    # Limpa e formata a resposta
+    clean_answer = clean_citations(answer)
+    answer_parts = split_message(clean_answer)
+
+    for i, part in enumerate(answer_parts, 1):
+        field_name = f"📚 Resposta (Parte {i})" if len(answer_parts) > 1 else "📚 Resposta"
+        embed.add_field(name=field_name, value=part, inline=False)
+
+    embed.timestamp = datetime.now(timezone.utc)
+
     return embed
+
+# Alias para manter compatibilidade
+create_ask_embed = create_response_embed
