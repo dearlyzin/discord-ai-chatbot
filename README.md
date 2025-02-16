@@ -14,7 +14,7 @@ An intelligent chatbot for Discord that utilizes the **Groq API** for faster res
 ## ⚙️ **Main Commands**  
 ````yaml
 !ask [your question] → Ask the AI a question.
-!help → Displays help information.
+!h → Displays help information.
 !clear → Clears conversation memory.
 ````
 
@@ -52,7 +52,7 @@ python bot.py
 
 ✔️ **Invite the Bot** → Use the OAuth2 URL to add the bot to your server.
 
-✔️ **See commands** → Use `!help` to list all the commands
+✔️ **See commands** → Use `!h` to list all the commands
 
 ✔️ **Ask Questions** → Use `!ask` [your question] to interact with the AI.
 
