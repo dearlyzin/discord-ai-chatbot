@@ -66,6 +66,4 @@ python bot.py
 
 🤖 **Discord API**
 
-⚡ **Groq API**
-
-  
+⚡ **Groq API** 
