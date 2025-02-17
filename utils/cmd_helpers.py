@@ -17,11 +17,16 @@ class Help(commands.Cog):
             name="🤖 Commands",
             value="""
             **!ask [your question]** - Ask something to the AI.
+<<<<<<< HEAD
 
             **!clear** - Clears the AI's memory.
 
             **!h** - Shows all bot commands.
 
+=======
+            **!clear** - Clears the AI's memory.
+            **!h** - Shows all bot commands.
+>>>>>>> 77e35faa746000d15cc66a5a62d84fa54ac4d364
             """,
             inline=False
         )
@@ -29,7 +34,11 @@ class Help(commands.Cog):
         embed.add_field(
             name="💡 Examples:",
             value="""
+<<<<<<< HEAD
             **!ask Who are you?** - Ask the AI about itself.
+=======
+            **!ask Who are you?**
+>>>>>>> 77e35faa746000d15cc66a5a62d84fa54ac4d364
             """,
             inline=False
         )
@@ -37,7 +46,11 @@ class Help(commands.Cog):
         embed.add_field(
             name="⚠️ Notes:",
             value="""
+<<<<<<< HEAD
             - **Wait 5 seconds between questions.**
+=======
+            - Wait 5 seconds between questions.
+>>>>>>> 77e35faa746000d15cc66a5a62d84fa54ac4d364
             """,
             inline=False
         )
